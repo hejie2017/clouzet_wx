@@ -1,0 +1,11 @@
+<view class="inputView" style="margin-top: 20% ">user name：
+<input class="input" phone placeholder="请输入账号" bindinput="userNameInput" />
+</view>
+<view class="inputView">Password
+<input class="input" password="true" placeholder="请输入密码" bindinput="passWdInput"/>
+</view>
+
+<view class="viewName" style="margin-top: 10% ">
+<button class="signin" bindtap="signin">登陆</button>
+</view>
+<view>{{infoMess}}</view>

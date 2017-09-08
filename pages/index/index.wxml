@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view class="container">
+  <view  bindtap="bindViewTap" class="userinfo">
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+  </view>
+    <view class="usermotto" bindtap="bindViewTap1" style="margin-top: 20% ">>
+    <text class="user-motto">蓝牙扫描</text>
+  </view>  
+
+  <view class="usermotto1" bindtap="registEmail" style="margin-top: 10% ">
+    <text>邮箱注册</text>
+  </view>
+  <view class="usermotto1" bindtap="registPhone" style="margin-top: 10% ">
+    <text>手机注册</text>
+  </view>
+  <view class="usermotto1" bindtap="signin" style="margin-top: 10% ">
+    <text>登陆</text>
+  </view>
+  <view class="usermotto1" bindtap="signinSNS" style="margin-top: 10% ">
+    <text>登陆SNS</text>
+  </view>
+
+</view>

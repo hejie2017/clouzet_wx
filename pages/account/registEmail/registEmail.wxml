@@ -1,0 +1,12 @@
+<view class="inputView" style="margin-top: 20% ">E-mail：
+<input class="input" email placeholder="请输入账号" bindinput="userNameInput" />
+</view>
+<view class="inputView">Password
+<input class="input" password="true" placeholder="请输入密码" bindinput="passWdInput"/>
+</view>
+
+<view class="viewName" style="margin-top: 10% ">
+  <button class="Check" bindtap="Check_email">验证邮箱</button>
+  <button class="registBtn" bindtap="register_email">注册</button>
+</view>
+<view>{{infoMess}}</view>

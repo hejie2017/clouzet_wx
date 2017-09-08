@@ -1,0 +1,5 @@
+
+<view class="viewName" style="margin-top: 30% ">
+<button class="signinSNS" bindtap="getWXAccessToken">登陆</button>
+</view>
+<view>{{infoMess}}</view>
