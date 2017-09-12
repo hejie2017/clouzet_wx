@@ -8,10 +8,15 @@ Page({
     logs: [],
     list:[],
     str:'',
+    _access_token:""
   },
-   onLoad: function () {
+   onLoad: function (opt) {
     console.log('onLoad')
-var that = this;
+    this.setData({
+      _access_token: opt._access_token
+    })
+    console.log(this.data._access_token)
+    var that = this;
 // const SDKVersion = wx.getSystemInfoSync().SDKVersion || '1.0.0'
 // const [MAJOR, MINOR, PATCH] = SDKVersion.split('.').map(Number)
 // console.log(SDKVersion);
@@ -36,36 +41,36 @@ var that = this;
       wx.openBluetoothAdapter({
       success: function(res){
         // success
-        console.log("-----success----------");
-         console.log(res);
+        // console.log("-----success----------");
+        //  console.log(res);
        wx.startBluetoothDevicesDiscovery({
   services: [],
   success: function(res){
     // success
-     console.log("-----startBluetoothDevicesDiscovery--success----------");
-     console.log(res);
+    //  console.log("-----startBluetoothDevicesDiscovery--success----------");
+    //  console.log(res);
   },
   fail: function(res) {
     // fail
-     console.log(res);
+    //  console.log(res);
   },
   complete: function(res) {
     // complete
-     console.log(res);
+    //  console.log(res);
   }
 })
 
 
       },
       fail: function(res) {
-         console.log("-----fail----------");
-        // fail
-         console.log(res);
+        //  console.log("-----fail----------");
+        // // fail
+        //  console.log(res);
       },
       complete: function(res) {
         // complete
-         console.log("-----complete----------");
-         console.log(res);
+        //  console.log("-----complete----------");
+        //  console.log(res);
       }
     })
 
@@ -73,15 +78,21 @@ var that = this;
        success: function(res){
          // success
          //{devices: Array[11], errMsg: "getBluetoothDevices:ok"}
-          that.setData({
-            list:res.devices,
-          });
+
+          console.log(res)
           
-          that.data.list.forEach((item) => {
-            console.log(item.deviceId);
-            console.log(item.name);
-            console.log('advertisData （String） ', util.base64ToString(wx.arrayBufferToBase64(item.advertisData)));
-          })
+          for (var i = res.devices.length -1; i >= 0; i--) {
+            if (res.devices[i].advertisData.indexOf("TG3D") > 0) {
+
+            }
+            else{
+              
+            }
+            res.devices[i].advertisData = util.base64ToString(wx.arrayBufferToBase64(res.devices[i].advertisData));
+          }
+          that.setData({
+            list: res.devices,
+          });
 
        },
        fail: function(res) {
@@ -92,17 +103,35 @@ var that = this;
        }
      })
 
-  },
+     wx.onBluetoothDeviceFound(function (res) {
+       console.log('new device list has founded')
+       for (var i = 0; i < res.devices.length; i++) {
+         res.devices[i].advertisData = util.base64ToString(wx.arrayBufferToBase64(res.devices[i].advertisData));
+         if (res.devices[i].advertisData.indexOf("TG3D") > 0) {
+            console.log("find TG3D");
+            wx.redirectTo({
+              url: '../conn/conn?_access_token=' + this.data._access_token + '&idKey=' + res.devices[i].advertisData,
+            })
+         }
+       }
+       that.setData({
+         list: res.devices,
+       });
+     })
 
+  },
 
   onShow:function(){
   },
    //点击事件处理
   bindViewTap: function(e) {
-    var title =  e.currentTarget.dataset.title;
+    
+    var deviceId = e.currentTarget.dataset.did;
     var name = e.currentTarget.dataset.name;
-     wx.redirectTo({
-       url: '../conn/conn?deviceId=' + title + '&name=' + name,
+    var idKey = e.currentTarget.dataset.adsd;
+
+    wx.redirectTo({
+       url: '../conn/conn?_access_token=' + this.data._access_token + '&idKey=' + idKey,
        success: function(res){
          // success
        },
@@ -112,9 +141,11 @@ var that = this;
        complete: function(res) {
          // complete
        }
-     })
-  },
+    })
 
-   
-  
+   },
+
+
 })
+
+

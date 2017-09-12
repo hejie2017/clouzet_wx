@@ -1,13 +1,13 @@
 
 <view >设备列表</view>
 <view  wx:for="{{list}}" wx:for-item="item" 
-         data-title="{{item.deviceId}}" 
+         data-did="{{item.deviceId}}" 
+         data-adsd="{{item.advertisData}}" 
          data-name="{{item.name}}" 
-         data-advertisData="{{item.advertisServiceUUIDs}}" 
          wx:key="{{item.deviceId}}"
          bindtap="bindViewTap">
       <view  class="item">
-    {{item.deviceId}}-{{item.name}}-{{item.advertisServiceUUIDs}}-{{item.RSSI}}-{{item.advertisData}}-
+    {{item.deviceId}}-{{item.name}}-{{item.advertisData}}-
     <view  class="ss"/>
       </view>
        

@@ -29,8 +29,8 @@ Page({
 
     Check_email: function () {
       var that = this;
-      var doMain = 'https://dev_g.tg3ds.com';
-      var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+      var doMain = getApp().globalData.doMain;
+      var api_key = getApp().globalData.api_key;
       var httpPath = "/api/v1/users/check_account";
       var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -76,8 +76,8 @@ Page({
 
     register_email: function () {
         var that = this;
-        var doMain = 'https://dev_g.tg3ds.com';
-        var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+        var doMain = getApp().globalData.doMain;
+        var api_key = getApp().globalData.api_key;
         var httpPath = "/api/v1/users/register_email";
         var http = doMain + httpPath + "/?apikey=" + api_key;
 

@@ -30,10 +30,16 @@ Page({
     })
   },
 
+  scan: function () {
+    wx.navigateTo({
+      url: '../../scan/scanble/scanble?_access_token=' + this.data._access_token
+    })
+  },
+
   Authorize: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/auth";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -54,7 +60,9 @@ Page({
           console.log(res.data);
           that.setData({
             infoMess: "身份已认证！",
+            _access_token: res.data.access_token
           })
+          that.scan();
         } else {
           that.setData({
             infoMess: "errno:" + res.data.error.errno + " msg:" + res.data.error.msg,
@@ -72,8 +80,8 @@ Page({
   
   signin: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/signin";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 

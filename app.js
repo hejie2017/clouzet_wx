@@ -29,6 +29,8 @@ App({
   globalData:{
     userInfo:null,
     code:null,
-    _auth_token:null
+    // doMain : 'https://dev_g.tg3ds.com',
+    doMain: 'https://api.tg3ds.com',
+    api_key : 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt'
   }
 })

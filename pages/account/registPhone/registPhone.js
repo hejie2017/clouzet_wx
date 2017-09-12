@@ -35,8 +35,8 @@ Page({
 
   Check_phone: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/check_account";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -80,8 +80,8 @@ Page({
 
   req_confirmation_token: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/req_confirmation_token";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -119,8 +119,8 @@ Page({
 
   confirm_phone: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/confirm_phone";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -161,8 +161,8 @@ Page({
 
   register_phone: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/register_phone";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 

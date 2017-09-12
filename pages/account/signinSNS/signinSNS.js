@@ -28,8 +28,9 @@ Page({
   },
 
   scan: function () {
+    console.log(this.data._auth_token);
     wx.navigateTo({
-      url: '../../scan/scanble/scanble'
+      url: '../../scan/scanble/scanble?auth_token=' + this.data._auth_token
     })
   },
   // Authorize: function () {
@@ -75,8 +76,8 @@ Page({
 
   signin_SNS: function () {
     var that = this;
-    var doMain = 'https://dev_g.tg3ds.com';
-    var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
     var httpPath = "/api/v1/users/signin_sns";
     var http = doMain + httpPath + "/?apikey=" + api_key;
 
@@ -96,12 +97,12 @@ Page({
         console.log(res.data)
         if (res.statusCode == 200) {
           that.setData({
-            _auth_token: res.data._token,
+            _auth_token: res.data.auth_token,
             _username: res.data.username,
             infoMess: "登陆成功！",
           })
-          getApp().globalData._auth_token = res.data._token;
           //that.Authorize();
+          console.log(that.data._auth_token);
           that.scan();
         } else {
           that.setData({
