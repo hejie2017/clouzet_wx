@@ -60,7 +60,6 @@ Page({
   }
 })
 
-
       },
       fail: function(res) {
         //  console.log("-----fail----------");
@@ -78,17 +77,23 @@ Page({
        success: function(res){
          // success
          //{devices: Array[11], errMsg: "getBluetoothDevices:ok"}
-
           console.log(res)
           
           for (var i = res.devices.length -1; i >= 0; i--) {
-            if (res.devices[i].advertisData.indexOf("TG3D") > 0) {
-
-            }
-            else{
-              
-            }
             res.devices[i].advertisData = util.base64ToString(wx.arrayBufferToBase64(res.devices[i].advertisData));
+            if (res.devices && res.devices[i].advertisData && res.devices[i].advertisData.indexOf("TG3D") > 0) {
+              console.log("find TG3D");
+              var dx = res.devices[i].advertisData.indexOf("TG3D");
+              getApp().globalData._access_token = that.data._access_token,
+                getApp().globalData.sessionkey = res.devices[i].advertisData.substring(dx -4, dx),
+                getApp().globalData.scannerid = res.devices[i].advertisData.substring(dx - 11, dx - 4)
+              console.log(getApp().globalData.sessionkey);
+              console.log(getApp().globalData.scannerid);
+              wx.redirectTo({
+                // url: '../conn/conn?_access_token=' + that.data._access_token + '&idKey=' + res.devices[i].advertisData + '&name=' + res.devices[i].name,
+                url: '../navigator/navigator1/navigator1?&name=' + res.devices[i].name,
+              })
+            }
           }
           that.setData({
             list: res.devices,
@@ -107,18 +112,25 @@ Page({
        console.log('new device list has founded')
        for (var i = 0; i < res.devices.length; i++) {
          res.devices[i].advertisData = util.base64ToString(wx.arrayBufferToBase64(res.devices[i].advertisData));
-         if (res.devices[i].advertisData.indexOf("TG3D") > 0) {
-            console.log("find TG3D");
-            wx.redirectTo({
-              url: '../conn/conn?_access_token=' + this.data._access_token + '&idKey=' + res.devices[i].advertisData,
-            })
+         if (res.devices ){
+           if (res.devices[i].advertisData){
+            if (res.devices[i].advertisData.indexOf("TG3D") > 0) {
+              console.log("find TG3D");
+              var dx = res.devices[i].advertisData.indexOf("TG3D");
+              getApp().globalData._access_token = that.data._access_token,
+              getApp().globalData.sessionkey = res.devices[i].advertisData.substring(dx - 4, dx),
+              getApp().globalData.scannerid = res.devices[i].advertisData.substring(dx - 11, dx - 4)
+              wx.redirectTo({
+                url: '../navigator/navigator1/navigator1?&name=' + res.devices[i].name,
+              })
+            }
+           }
          }
        }
-       that.setData({
-         list: res.devices,
-       });
+      //  that.setData({
+      //    list: res.devices,
+      //  });
      })
-
   },
 
   onShow:function(){
@@ -131,7 +143,7 @@ Page({
     var idKey = e.currentTarget.dataset.adsd;
 
     wx.redirectTo({
-       url: '../conn/conn?_access_token=' + this.data._access_token + '&idKey=' + idKey,
+      url: '../navigator/navigator1/navigator1?_access_token=' + this.data._access_token + '&idKey=' + idKey + '&name=' + name,
        success: function(res){
          // success
        },
@@ -142,9 +154,7 @@ Page({
          // complete
        }
     })
-
    },
-
 
 })
 

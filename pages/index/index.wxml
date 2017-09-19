@@ -21,4 +21,8 @@
     <text>登陆SNS</text>
   </view>
 
+  <view class="usermotto1" bindtap="navigator" style="margin-top: 10% ">
+    <text>navigator</text>
+  </view>
+
 </view>

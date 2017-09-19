@@ -5,22 +5,22 @@
 <input class="input" password="true" placeholder="请输入密码" bindinput="passWdInput"/>
 </view> -->
 
-<view class="viewName" style="margin-top: 10% ">
-<button class="INITIAL" bindtap="INITIAL">初始化扫描机</button>
-</view>
-<view class="viewName" style="margin-top: 10% ">
+<!-- <view class="viewName" style="margin-top: 10% ">
+<button class="INITIAL" bindtap="INITIAL">准备扫描机</button>
+</view> -->
+<!-- <view class="viewName" style="margin-top: 10% ">
 <button class="CONFIRM" bindtap="CONFIRM">确认扫描机</button>
-</view>
-<view class="viewName" style="margin-top: 10% ">
-<button class="START" bindtap="START">启动扫描机</button>
-</view>
-<view class="viewName" style="margin-top: 10% ">
+</view> -->
+<!-- <view class="viewName" style="margin-top: 10% ">
+<button class="START" bindtap="START">开始扫描</button>
+</view> -->
+<!-- <view class="viewName" style="margin-top: 10% ">
 <button class="CANCEL" bindtap="CANCEL">取消扫描机</button>
-</view>
-<view class="viewName" style="margin-top: 10% ">
+</view> -->
+<!-- <view class="viewName" style="margin-top: 10% ">
 <button class="WAITFORSCANNING" bindtap="WAITFORSCANNING">开始扫描</button>
-</view>
-<view class="viewName" style="margin-top: 10% ">
+</view> -->
+<!-- <view class="viewName" style="margin-top: 10% ">
 <button class="WAITFORSCANNINGRESULT" bindtap="WAITFORSCANNINGRESULT">获得扫描结果</button>
-</view>
+</view> -->
 <view>{{infoMess}}</view>

@@ -40,6 +40,11 @@ Page({
       url: '../account/signinSNS/signinSNS'
     })
   },
+  navigator: function () {
+    wx.navigateTo({
+      url: '../scan/navigator/navigator1/navigator1'
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     var that = this
@@ -50,6 +55,7 @@ Page({
         userInfo:userInfo
       })
     })
+
   }
   
 })

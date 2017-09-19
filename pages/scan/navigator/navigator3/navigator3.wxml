@@ -1,0 +1,15 @@
+<!-- <import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <!-- <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}"/> -->
+  <view >扫描前注意事项</view>
+  <!-- <view class="page-body">
+    <view class="btn-area">
+      <button bindtap="navigateTo">开始扫描</button>
+      <button bindtap="navigateBack">上一步</button>
+    </view>
+  </view> -->
+
+  <!-- <template is="foot" /> -->
+</view>

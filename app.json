@@ -2,13 +2,16 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
-    "pages/conn/conn",
     "pages/account/registEmail/registEmail",
     "pages/account/registPhone/registPhone",
     "pages/account/signin/signin",
     "pages/account/signinSNS/signinSNS",
     "pages/scan/scanble/scanble",
-    "pages/scan/conn/conn"
+    "pages/scan/conn/conn",
+    "pages/scan/navigator/navigator1/navigator1",
+    "pages/scan/navigator/navigator2/navigator2",
+    "pages/scan/navigator/navigator3/navigator3",
+    "pages/scan/navigator/navigatorGo/navigatorGo"
   ],
   "window":{
     "backgroundTextStyle":"light",

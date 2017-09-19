@@ -33,6 +33,7 @@ Page({
   scan: function () {
     wx.navigateTo({
       url: '../../scan/scanble/scanble?_access_token=' + this.data._access_token
+      // url: '../../scan/swiper/swiper?_access_token=' + this.data._access_token
     })
   },
 

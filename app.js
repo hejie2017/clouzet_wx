@@ -31,6 +31,11 @@ App({
     code:null,
     // doMain : 'https://dev_g.tg3ds.com',
     doMain: 'https://api.tg3ds.com',
-    api_key : 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt'
+    api_key : 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt',
+    //扫描机相关
+    _access_token:"",
+    sessionkey: "",
+    scannerid: "",
+    tid:""
   }
 })
