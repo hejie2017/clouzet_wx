@@ -1,6 +1,6 @@
 .body{
   margin-top:50rpx; 
-  width:240rpx;
+  width:320rpx;
   height:510rpx;
 }
 .foot{ 
@@ -10,12 +10,7 @@
 }
 
 .content{
+  margin-top:150rpx; 
   display: flex;  
   flex-direction: row;  
-}
-
-.button{
-    margin-top: 50px;
-    width:420rpx;
-    height:100rpx;
 }

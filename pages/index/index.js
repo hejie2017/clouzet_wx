@@ -4,8 +4,21 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    src:"../../res/ic_scan_finish.png",
+    animation: ""
   },
+
+
+  // rotateAni: function (n) {
+  //   console.log("rotate==" + n)
+  //   this.animation.rotate(180 * (2)).step()
+  //   this.setData({
+  //     animation: this.animation.export()
+  //   })
+  // },
+
+
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
@@ -56,6 +69,15 @@ Page({
       })
     })
 
+    this.animation = wx.createAnimation({
+      duration: 1400,
+      timingFunction: 'linear', // "linear","ease","ease-in","ease-in-out","ease-out","step-start","step-end"
+      delay: 0,
+      transformOrigin: '50% 50% 0',
+      success: function (res) {
+        console.log("res")
+      }
+    })
   }
   
 })

@@ -1,0 +1,11 @@
+<!-- <import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <view >{{infoMess}}</view>
+
+  <view class="content">
+  <image  class="body" src="../../../../res/ScanFlow/illustration02.png"></image>
+  </view>
+  <!-- <image animation="{{animation}}" class="body" src="../../../../res/ScanFlow/illustration01.png"></image> -->
+</view>

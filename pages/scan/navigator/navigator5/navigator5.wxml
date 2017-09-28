@@ -1,0 +1,19 @@
+<!-- <import src="../../../common/head.wxml" />
+<import src="../../../common/foot.wxml" /> -->
+
+<view class="container">
+  <view >{{infoMess}}</view>
+
+  <view class="content0">
+  <view class="content">
+  <image  class="foot" src="../../../../res/foorShape1.png"></image>
+  <image  class="foot" src="../../../../res/foorShape.png"></image>
+  </view>
+  <view class="content">
+  <image animation="{{animation}}" class="foot" src="../../../../res/foorShapeB1.png"></image>
+  <image animation="{{animation1}}" class="foot" src="../../../../res/foorShapeB.png"></image>
+  </view>
+  </view>
+
+  <!-- <image animation="{{animation}}" class="body" src="../../../../res/ScanFlow/illustration01.png"></image> -->
+</view>

@@ -21,8 +21,18 @@
     <text>登陆SNS</text>
   </view>
 
-  <view class="usermotto1" bindtap="navigator" style="margin-top: 10% ">
+   <view class="usermotto1" bindtap="navigator" style="margin-top: 10% ">
     <text>navigator</text>
+  </view> 
+
+  <!-- <view class="door">
+   <image animation="{{animation}}" class="door" src="../../res/ic_scan_finish.png"></image>
   </view>
+ 
+
+  <view class="usermotto11" bindtap="rotateAni">
+    <text>rotateAni</text>
+  </view> -->
+
 
 </view>

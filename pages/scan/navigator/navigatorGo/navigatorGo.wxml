@@ -3,7 +3,9 @@
 
 <view class="container">
   <!-- <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}"/> -->
+  <view class="content">
   <view >扫描倒计时</view>
+  </view>
   <view >{{clock}}</view>
   <!-- <view class="page-body">
     <view class="btn-area">

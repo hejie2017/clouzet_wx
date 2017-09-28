@@ -1,0 +1,5 @@
+.content{
+  margin-top:300rpx; 
+  display: flex;  
+  flex-direction: column;  
+}

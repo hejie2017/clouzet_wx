@@ -15,7 +15,6 @@ App({
       wx.login({
         success: function (res) {
           that.globalData.code = res.code;
-          console.log(res.code)
           wx.getUserInfo({
             success: function (res) {
               that.globalData.userInfo = res.userInfo

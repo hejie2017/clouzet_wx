@@ -2,15 +2,8 @@
 <import src="../../../common/foot.wxml" /> -->
 
 <view class="container">
-  <!-- <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}"/> -->
   <view >欢迎来到三维人体扫描室</view>
-  <view >{{deviceName}}</view>
-  <!-- <view class="page-body">
-    <view class="btn-area">
-      <button bindtap="navigateTo">下一步</button>
-      <button bindtap="navigateBack">上一步</button>
-    </view>
-  </view> -->
-
-  <!-- <template is="foot" /> -->
+  <image animation="{{animation}}" class="door" src="../../../../res/ScanFlow/illustrationDoor01.png"></image>
+  <view class="name">{{deviceName}}</view>
+  <button type="primary" bindtap="navigateTo" class="button">下一步</button>
 </view>

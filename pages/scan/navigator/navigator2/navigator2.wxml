@@ -2,14 +2,7 @@
 <import src="../../../common/foot.wxml" /> -->
 
 <view class="container">
-  <!-- <template is="head" data="{{title: 'navigateTo/Back, redirectTo'}}"/> -->
   <view >请将手机放在前方架子上</view>
-  <!-- <view class="page-body">
-    <view class="btn-area">
-      <button bindtap="navigateTo">下一步</button>
-      <button bindtap="navigateBack">上一步</button>
-    </view>
-  </view> -->
-
-  <!-- <template is="foot" /> -->
+  <image animation="{{animation}}" class="phone" src="../../../../res/ScanFlow/illustrationPhone.png"></image>
+  <button type="primary" bindtap="navigateTo" class="button">下一步</button>
 </view>
