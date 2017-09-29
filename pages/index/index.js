@@ -18,6 +18,12 @@ Page({
   //   })
   // },
 
+  //正式版登录流程
+  officeEntrance: function () {
+    wx.navigateTo({
+      url: '../account/office/regist/index'
+    })
+  },
 
   //事件处理函数
   bindViewTap: function() {
@@ -58,6 +64,13 @@ Page({
       url: '../scan/navigator/navigator1/navigator1'
     })
   },
+
+  loadimage: function () {
+    wx.navigateTo({
+      url: '../scan/conn/conn'
+    })
+  },
+
   onLoad: function () {
     console.log('onLoad')
     var that = this

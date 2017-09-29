@@ -60,5 +60,15 @@ function base64ToString(data) {
 
 module.exports = {
   formatTime: formatTime,
-  base64ToString: base64ToString
+  base64ToString: base64ToString,
+  regexConfig: regexConfig
+}
+
+//閭浠ュ強鎵嬫満鐨勬鍒欒〃杈惧紡
+function regexConfig() {
+  var reg = {
+    email: /^(\w-*\.*)+@(\w-?)+(\.\w{2,})+$/,
+    phone: /^1(3|4|5|7|8)\d{9}$/
+  }
+  return reg;
 }

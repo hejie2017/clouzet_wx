@@ -7,7 +7,9 @@
     <view class="usermotto" bindtap="bindViewTap1" style="margin-top: 20% ">>
     <text class="user-motto">蓝牙扫描</text>
   </view>  
-
+  <view class="usermotto1" bindtap="officeEntrance" style="margin-top: 10% ">
+    <text>正式登录注册</text>
+  </view>
   <view class="usermotto1" bindtap="registEmail" style="margin-top: 10% ">
     <text>邮箱注册</text>
   </view>
@@ -23,6 +25,10 @@
 
    <view class="usermotto1" bindtap="navigator" style="margin-top: 10% ">
     <text>navigator</text>
+  </view>
+
+  <view class="usermotto1" bindtap="loadimage" style="margin-top: 10% ">
+    <text>loadimage</text>
   </view> 
 
   <!-- <view class="door">

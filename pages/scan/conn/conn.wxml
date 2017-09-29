@@ -24,3 +24,14 @@
 <button class="WAITFORSCANNINGRESULT" bindtap="WAITFORSCANNINGRESULT">获得扫描结果</button>
 </view> -->
 <view>{{infoMess}}</view>
+
+<button class="loadImage" bindtap="loadImage">加载图片</button>
+
+<image class="image" src="{{imageUrl}}" mode="aspectFit" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove"></image>
+
+<!-- <view class="content">
+  <button bindtap="turnleft">turnleft</button>
+  <button bindtap="turnright">turnright</button>
+</view> -->
+
+<button bindtap="turnleft">turnleft</button>

@@ -2,6 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/logs/logs",
+    "pages/account/office/login/index",
+    "pages/account/office/regist/index",
     "pages/account/registEmail/registEmail",
     "pages/account/registPhone/registPhone",
     "pages/account/signin/signin",
