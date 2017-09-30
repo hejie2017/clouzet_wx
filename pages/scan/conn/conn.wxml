@@ -25,13 +25,26 @@
 </view> -->
 <view>{{infoMess}}</view>
 
-<button class="loadImage" bindtap="loadImage">加载图片</button>
 
+<view class="content" disabled="{{Disabled}}">
+<view class="contentC">
+<view class="piece">颈围{{CollarCircumference}}</view>
+<view class="piece">胸围{{ChestCircumference}}</view>
+<view class="piece">后身长{{CenterBackNecktoCrotchLength}}</view>
+<view class="piece">腰围{{NarrowWaistCircumference}}</view>
+<view class="piece">臀围{{LowHipCircumference}}</view>
+</view>
 <image class="image" src="{{imageUrl}}" mode="aspectFit" bindtouchstart="mytouchstart" bindtouchmove="mytouchmove"></image>
+<view class="contentC">
+<view class="piece">肩宽{{BackCrossShoulderWidth}}</view>
+<view class="piece">臂围{{LeftUpperArmCircumference}}</view>
+<view class="piece">臂长{{LeftArmLength}}</view>
+<view class="piece">大腿围{{LeftThighCircumference}}</view>
+<view class="piece">内腿长{{LeftInseamLength}}</view>
+</view>
+</view>
 
 <!-- <view class="content">
   <button bindtap="turnleft">turnleft</button>
   <button bindtap="turnright">turnright</button>
 </view> -->
-
-<button bindtap="turnleft">turnleft</button>

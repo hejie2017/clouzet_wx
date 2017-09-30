@@ -5,7 +5,17 @@
 }
 
 .content{
-  margin-top:10rpx; 
+  margin-top:100rpx; 
   display: flex;  
   flex-direction: row;  
+}
+
+.contentC{
+  margin-top:10rpx;
+  display: flex;  
+  flex-direction: column;  
+}
+
+.piece{
+  height: 80px;
 }
