@@ -5,6 +5,7 @@ Page({
   data: {
     _uid: "",
     _auth_token: "",
+    _access_token:"",
     _token:"",
     _openId:"",
     _expired_in:"",
@@ -30,49 +31,50 @@ Page({
   scan: function () {
     console.log(this.data._auth_token);
     wx.navigateTo({
-      url: '../../scan/scanble/scanble?auth_token=' + this.data._auth_token
+      url: '../../scan/scanble/scanble?_access_token=' + this.data._access_token
     })
   },
-  // Authorize: function () {
-  //   var that = this;
-  //   var doMain = 'https://dev_g.tg3ds.com';
-  //   var api_key = 'p6EUrTlfQNn3GGh9uZVRwAPPJfMD0cqJ85Qt';
-  //   var httpPath = "/api/v1/users/auth";
-  //   var http = doMain + httpPath + "/?apikey=" + api_key;
+  Authorize: function () {
+    var that = this;
+    var doMain = getApp().globalData.doMain;
+    var api_key = getApp().globalData.api_key;
+    var httpPath = "/api/v1/users/auth";
+    var http = doMain + httpPath + "/?apikey=" + api_key;
 
-  //   console.log(http);
-  //   wx.request({
-  //     url: http,
-  //     data: {
-  //       "username": this.data._username,
-  //       "provider": 3,
-  //       "auth_token": this.data._auth_token
-  //     },
-  //     header: {
-  //       "Content-Type": "application/json"
-  //     },
-  //     method: "POST",
-  //     success: function (res) {
-  //       console.log(res.data)
-  //       if (res.statusCode == 200) {
-  //         console.log(res.data);
-  //         that.setData({
-  //           infoMess: "获得！！",
-  //         })
-  //       } else {
-  //         that.setData({
-  //           infoMess: "errno:" + res.data.error.errno + " msg:" + res.data.error.msg,
-  //         })
-  //       }
-  //     },
-  //     fail: function (err) {
-  //       that.setData({
-  //         infoMess: err,
-  //       })
-  //       console.log(err)
-  //     }
-  //   })
-  // },
+    wx.request({
+      url: http,
+      data: {
+        "username": this.data._username,
+        "provider": 3,
+        "auth_token": this.data._auth_token
+      },
+      header: {
+        "Content-Type": "application/json"
+      },
+      method: "POST",
+      success: function (res) {
+        console.log(res.data)
+        if (res.statusCode == 200) {
+          console.log(res.data);
+          that.setData({
+            infoMess: "身份已认证！",
+            _access_token: res.data.access_token
+          })
+          that.scan();
+        } else {
+          that.setData({
+            infoMess: "errno:" + res.data.error.errno + " msg:" + res.data.error.msg,
+          })
+        }
+      },
+      fail: function (err) {
+        that.setData({
+          infoMess: err,
+        })
+        console.log(err)
+      }
+    })
+  },
 
   signin_SNS: function () {
     var that = this;
@@ -101,9 +103,10 @@ Page({
             _username: res.data.username,
             infoMess: "登陆成功！",
           })
-          //that.Authorize();
+          that.Authorize();
+          console.log(that.data._username);
           console.log(that.data._auth_token);
-          that.scan();
+          // that.scan();
         } else {
           that.setData({
             infoMess: "errno:" + res.data.error.errno + " msg:" + res.data.error.msg,
